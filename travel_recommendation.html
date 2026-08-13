@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TravelBloom - discover dream destinations around the world.">
+  <title>TravelBloom</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#home" aria-label="TravelBloom home">
+      <span class="brand-mark">✈</span>
+      <span>TravelBloom</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+
+    <form id="searchForm" class="search-bar">
+      <input id="searchInput" type="search" placeholder="Enter a destination or keyword" autocomplete="off">
+      <span class="search-icon">🔍</span>
+      <button type="submit">Search</button>
+      <button type="button" id="clearBtn" class="secondary">Clear</button>
+    </form>
+  </header>
+
+  <aside class="social-bar" aria-label="Social media">
+    <a href="#" aria-label="Twitter">♥</a>
+    <a href="#" aria-label="Facebook">f</a>
+    <a href="#" aria-label="Instagram">◎</a>
+    <a href="#" aria-label="YouTube">▶</a>
+  </aside>
+
+  <main>
+    <section id="home" class="page hero">
+      <div class="hero-content">
+        <h1>EXPLORE DREAM<br>DESTINATION</h1>
+        <p>
+          The Travel Recommendation App helps users explore popular travel destinations
+          through an interactive and user-friendly interface. It allows users to search
+          for beaches, temples, countries, or specific country names to view related
+          cities along with images and descriptions. The app dynamically fetches data
+          from a structured JSON file to display relevant results. It provides a simple
+          and efficient way to discover and plan travel destinations.
+        </p>
+        <button class="primary" id="bookBtn">Book Now</button>
+      </div>
+
+      <div id="homeResults" class="results home-results" aria-live="polite"></div>
+    </section>
+
+    <section id="about" class="page about">
+      <div class="page-inner">
+        <h1>ABOUT US</h1>
+
+        <article class="glass-card intro-card">
+          <p>
+            <strong>Welcome to Our Company!</strong> We are a team of passionate individuals
+            dedicated to providing excellent services/products to our customers. Our mission
+            is to provide the best experience for people traveling to different destinations
+            around the world.
+          </p>
+          <p>
+            Our values include integrity, innovation, customer satisfaction, and teamwork.
+            We believe in putting our customers first and working together to achieve our goals.
+          </p>
+          <p>Feel free to explore our website to learn more about what we offer!</p>
+        </article>
+
+        <div class="team-section glass-card">
+          <h2>Our<br>Team</h2>
+          <div id="teamGrid" class="team-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="page contact">
+      <div class="contact-layout">
+        <div class="contact-copy">
+          <h1>CONTACT US</h1>
+          <p>Get in touch</p>
+        </div>
+
+        <form id="contactForm" class="contact-form glass-card" novalidate>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Enter your name" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="Enter your email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+
+          <button class="primary" type="submit">Submit</button>
+          <p id="formStatus" class="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="searchPage" class="page search-page">
+      <div class="search-page-inner">
+        <h1>Search Results</h1>
+        <p id="searchSummary" class="search-summary"></p>
+        <div id="resultsGrid" class="results-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="bookingDialog">
+    <form method="dialog" class="dialog-card">
+      <button class="dialog-close" value="cancel" aria-label="Close">×</button>
+      <h2>Plan your trip</h2>
+      <p>Choose a destination from the search results to start planning your journey.</p>
+      <button class="primary" value="cancel">Got it</button>
+    </form>
+  </dialog>
+
+  <script src="travel_recommendation.js"></script>
+</body>
+</html>
